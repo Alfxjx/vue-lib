@@ -36,11 +36,14 @@
 
 <script lang="ts">
 import { Component, Vue, Prop, Watch } from "vue-property-decorator";
-import clickOut from "./clickOut";
+import clickOut from "@/components/directives/clickOut";
 
-Vue.directive("clickOut", clickOut);
 // import Emitter from '../../mixins/emitter.vue';
-@Component
+@Component({
+  directives: {
+    clickOut
+  }
+})
 export default class Tooltip extends Vue {
   // 是否展示
   @Prop() show!: boolean;
@@ -129,7 +132,7 @@ export default class Tooltip extends Vue {
     // console.log("toTop" + this.toTop);
     this.toLeft = e.pageX;
     const middleLine: number = this.screenWidth / 2;
-    console.log(middleLine);
+    // console.log(middleLine);
 
     if (this.toLeft < middleLine) {
       this.isLeft = true;
@@ -142,8 +145,6 @@ export default class Tooltip extends Vue {
     }
     const el = document.getElementById("tipClick");
     const tipWrap = document.getElementById("tipWrap");
-    console.log(el);
-    console.log(tipWrap);
     if (el && tipWrap) {
       // slot 距离顶部的距离
       this.tipHeight = tipWrap.offsetTop;
@@ -181,8 +182,7 @@ export default class Tooltip extends Vue {
 </script>
 
 <style scoped lang="scss">
-$theme-tooltip-bgcolor: #24a0ff;
-$theme-font-color: #fff;
+@import "@style/var.scss";
 .tip-wrap {
   display: flex;
   flex-direction: column;

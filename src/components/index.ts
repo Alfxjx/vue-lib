@@ -1,4 +1,3 @@
-import Vue from "vue";
 import { VueConstructor } from "vue/types";
 import Tooltip from "./tooltip/index";
 import Button from "./button/index";

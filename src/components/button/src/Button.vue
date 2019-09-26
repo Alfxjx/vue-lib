@@ -116,9 +116,7 @@ export default class Button extends Vue {
 </script>
 
 <style scoped lang="scss">
-$btn-theme-color: #3f69f2;
-$theme-grey-background: #f0f1f5;
-$theme-grey-text: #afb0b3;
+@import '@style/var.scss';
 .self-button {
   display: flex;
   justify-content: center;

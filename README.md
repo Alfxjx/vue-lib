@@ -8,5 +8,5 @@
 - 压缩core.js TODO: 发布时修改
 - npm run doc 
   - build dir
-- build --target lib?
+- build --target lib? **ok**
 - lint **OK**

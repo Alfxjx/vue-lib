@@ -26,6 +26,7 @@
     "arrow-parens": false,
     "no-unnecessary-initializer": true,
     "no-empty-interface": true,
-    "no-console": false
+    "no-console": false,
+    "no-bitwise": false
   }
 }

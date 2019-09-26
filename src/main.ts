@@ -3,7 +3,7 @@ import App from "./App.vue";
 // @ts-ignore
 // import lib from "../dist/vuedash.umd.js";
 // import "../dist/vuedash.css";
-import lib, { Button } from "./components/index";
+import lib from "./components/index";
 
 Vue.use(lib);
 Vue.config.productionTip = false;
