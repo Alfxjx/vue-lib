@@ -3,8 +3,6 @@ import { isMobile } from "@/utils/tool";
 
 export default {
   bind(el: any, binding: any, vnode: VNode) {
-    console.log(el);
-    
     function clickHandler(e: any) {
       // in
       if (
