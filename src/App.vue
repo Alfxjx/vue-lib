@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import Tooltip from "./components/tooltip/tooltip.vue";
+import Tooltip from "./components/tooltip/src/tooltip.vue";
 
 @Component({
   components: {

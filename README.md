@@ -9,3 +9,4 @@
 - npm run doc 
   - build dir
 - build --target lib?
+- lint

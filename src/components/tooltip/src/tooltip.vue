@@ -1,6 +1,6 @@
 <template>
   <div class="tip-wrap" v-clickOut="hideTooltip" @click="getClickPosition" id="tipWrap">
-    <div class="tip-ref" ref="tipClick" id="tipClick" >
+    <div class="tip-ref" ref="tipClick" id="tipClick">
       <slot></slot>
     </div>
     <div
@@ -79,7 +79,7 @@ export default class Tooltip extends Vue {
     this.isLeft
       ? (width = this.screenWidth - this.toLeft - 6)
       : (width = this.toLeft);
-    let lines = Math.floor((this.context.length * 12) / width) + 1;
+    const lines = Math.floor((this.context.length * 12) / width) + 1;
     // 按照标准，设计字号12px,行高17px.
     // 上下留18px padding。
     return lines * 17 + 36;
@@ -89,7 +89,7 @@ export default class Tooltip extends Vue {
     if (this.isLeft) {
       return "auto";
     } else {
-      let res =
+      const res =
         this.screenWidth - this.toLeft - 25 > 0
           ? this.screenWidth - this.toLeft - 25
           : 0;
@@ -98,7 +98,7 @@ export default class Tooltip extends Vue {
   }
   get ctxPosLeft(): string {
     if (this.isLeft) {
-      let res = this.toLeft - 25 > 0 ? this.toLeft - 25 : 0;
+      const res = this.toLeft - 25 > 0 ? this.toLeft - 25 : 0;
       return res.toString() + "px";
     } else {
       return "auto";
@@ -118,19 +118,19 @@ export default class Tooltip extends Vue {
     }
   }
 
-  hideTooltip(el: any): void {
+  public hideTooltip(el: any): void {
     this.$emit("update:show", false);
   }
 
-  getClickPosition(e: any) {
+  public getClickPosition(e: any) {
     // console.log(this.ctxPosTop);
     // console.log(e);
     this.toTop = e.pageY;
     // console.log("toTop" + this.toTop);
     this.toLeft = e.pageX;
-    let middleLine: number = this.screenWidth / 2;
+    const middleLine: number = this.screenWidth / 2;
     console.log(middleLine);
-    
+
     if (this.toLeft < middleLine) {
       this.isLeft = true;
       this.leftTriangle2border = "15px";
@@ -140,8 +140,8 @@ export default class Tooltip extends Vue {
       this.rightTriangle2border = "15px";
       this.leftTriangle2border = "22.5px";
     }
-    let el = document.getElementById("tipClick");
-    let tipWrap = document.getElementById("tipWrap");
+    const el = document.getElementById("tipClick");
+    const tipWrap = document.getElementById("tipWrap");
     console.log(el);
     console.log(tipWrap);
     if (el && tipWrap) {
